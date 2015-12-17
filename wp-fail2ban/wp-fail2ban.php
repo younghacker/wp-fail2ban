@@ -28,10 +28,12 @@
  */
 
 
-function f2b_openlog() {
+#function f2b_openlog($log = LOG_AUTH, $custom_log = 'WP_FAIL2BAN_AUTH_LOG') {
+function f2b_openlog($log = LOG_AUTH, $custom_log = 'WP_FAIL2BAN_LOG') {
         openlog('wordpress('.$_SERVER['HTTP_HOST'].')',
-                         LOG_NDELAY|LOG_PID,
-                         defined(WP_FAIL2BAN_LOG) ? WP_FAIL2BAN_LOG : LOG_AUTH);
+                        LOG_NDELAY|LOG_PID,
+                        defined($custom_log) ? constant($custom_log) : $log);
+
 }
 
 function f2b_bail() {
@@ -104,7 +106,7 @@ add_action( 'wp_login_failed','f2b_login_failed');
 if (defined('WP_FAIL2BAN_LOG_PINGBACKS') && true === WP_FAIL2BAN_LOG_PINGBACKS) {
         function f2b_log_pingbacks($call) {
                 if ('pingback.ping' == $call) {
-                        openlog(LOG_USER,'WP_FAIL2BAN_PINGBACK_LOG');
+                        f2b_openlog(LOG_USER,'WP_FAIL2BAN_PINGBACK_LOG');
                         syslog(LOG_INFO,"Pingback requested from ".remote_addr());
                 }
         }
