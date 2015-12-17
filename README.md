@@ -10,8 +10,9 @@ Original plugin's url https://wordpress.org/plugins/wp-fail2ban/
 * fail2ban-0.8.14
 
 ##### Installation
-Copy wp-fail2ban folder into your wp-plugins folder `wp-content/plugins/`
-Login into wp-admin panel and activate `WP fail2ban` plugin
+* Copy wp-fail2ban folder into your wp-plugins folder `wp-content/plugins/`.
+* Login into wp-admin panel and activate `WP fail2ban` plugin.
+* Install or change `fail2ban` and `iptables` settings follow this [instructions](https://github.com/younghacker/wp-fail2ban/tree/master/fail2ban).
 
 ##### Troubleshutting
 * Add `define('WP_DEBUG', true);` into `wp-config.php` in site's public_html folder, and refresh web page, you can see an error.
