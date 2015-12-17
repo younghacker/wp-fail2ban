@@ -18,7 +18,7 @@ Original plugin's url https://wordpress.org/plugins/wp-fail2ban/
 If someone use pingback to your site too frequently you can block it.
 Define variables in `wp-config.php`
 ```
-define('WP_FAIL2BAN_LOG_PINGBACKS',true);  # 
+define('WP_FAIL2BAN_LOG_PINGBACKS', true);  # 
 ```
 
 ##### Troubleshutting
