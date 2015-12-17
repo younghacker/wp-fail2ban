@@ -14,6 +14,13 @@ Original plugin's url https://wordpress.org/plugins/wp-fail2ban/
 * Login into wp-admin panel and activate `WP fail2ban` plugin.
 * Install or change `fail2ban` and `iptables` settings follow this [instructions](https://github.com/younghacker/wp-fail2ban/tree/master/fail2ban).
 
+##### Plugin tunning
+If someone use pingback to your site too frequently you can block it.
+Define variables in `wp-config.php`
+```
+define('WP_FAIL2BAN_LOG_PINGBACKS',true);  # 
+```
+
 ##### Troubleshutting
 * Add `define('WP_DEBUG', true);` into `wp-config.php` in site's public_html folder, and refresh web page, you can see an error.
 * If plugin activation makes the site unavialable, login trhough ftp and rename `wp-content/plugins/wp-fail2ban` to `wp-fail2ban-1`. This will temporary disable wp-fail2ban plugin.
