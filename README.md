@@ -24,3 +24,4 @@ define('WP_FAIL2BAN_LOG_PINGBACKS', true);  #
 ##### Troubleshutting
 * Add `define('WP_DEBUG', true);` into `wp-config.php` in site's public_html folder, and refresh web page, you can see an error.
 * If plugin activation makes the site unavialable, login trhough ftp and rename `wp-content/plugins/wp-fail2ban` to `wp-fail2ban-1`. This will temporary disable wp-fail2ban plugin.
+* If your server using nginx and/or varnish proxy/cache wp-fail2ban plugin can write to log only server's ip address, not client.ip. Configure your server depends on mode how it work.
